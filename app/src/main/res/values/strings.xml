@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">TrackYourScrolls</string>
+
+    <string-array name="test">
+        <item>test1</item>
+        <item>test2</item>
+        <item>test3</item>
+        <item>test4</item>
+        <item>test5</item>
+        <item>test6</item>
+        <item>test7</item>
+        <item>test8</item>
+        <item>test9</item>
+        <item>test10</item>
+    </string-array>
 </resources>
