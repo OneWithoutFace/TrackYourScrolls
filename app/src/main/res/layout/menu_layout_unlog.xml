@@ -2,14 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@drawable/dialogbkg"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|top"
-        android:scaleType="centerCrop" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +12,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/menuText"
+            android:id="@+id/menuTextUL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -28,18 +23,12 @@
             android:textColor="@color/white"
             android:textSize="25dp" />
 
-        <ImageView
-            android:id="@+id/cancelButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="8dp" />
 
     </LinearLayout>
 
 
     <LinearLayout
-        android:id="@+id/layoutHome"
+        android:id="@+id/layoutHomeUL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -61,7 +50,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layoutZone"
+        android:id="@+id/layoutZoneUL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
