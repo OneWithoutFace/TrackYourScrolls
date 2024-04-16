@@ -20,9 +20,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    boolean logIn = false;
     ArrayList<ZoneModel>zoneModels = new ArrayList<>();
-    Button profileSheet;
-    ImageButton menuSheet;
+    ImageButton menuSheet,profileSheet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +34,45 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         menuSheet = findViewById(R.id.btnMenu);
+        profileSheet = findViewById(R.id.btnProfile);
         menuSheet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDialogmenuUnlog();
+                if (logIn == true){
+
+                }
+                else {
+                    showDialogmenuUnlog();
+                }
+
             }
         });
 
+        profileSheet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (logIn == true){
+
+                }
+                else {
+                    showDialogProfileOut();
+                }
+
+            }
+        });
+
+
+    }
+    private void showDialogProfileOut(){
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.profile_layout_out);
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.TOP);
     }
 
     private void showDialogmenuUnlog(){

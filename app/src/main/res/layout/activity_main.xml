@@ -9,11 +9,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="101dp"
+        android:layout_height="76dp"
         android:background="#606060"
         android:elevation="10dp"
         android:gravity="center|left"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,10 +28,12 @@
 
             <ImageButton
                 android:id="@+id/btnMenu"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@android:drawable/ic_dialog_dialer" />
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="#00FFFFFF"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/menusmall" />
 
             <Space
                 android:layout_width="50dp"
@@ -40,10 +42,10 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_launcher_foreground" />
+                app:srcCompat="@drawable/logotextless" />
 
             <Space
                 android:layout_width="50dp"
@@ -52,16 +54,17 @@
 
             <ImageButton
                 android:id="@+id/btnProfile"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@android:drawable/ic_menu_myplaces" />
+                android:background="#00FFFFFF"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/profsmall" />
 
             <Space
                 android:layout_width="25dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
-
 
 
         </LinearLayout>

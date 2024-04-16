@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dialogbkg"
@@ -18,22 +19,18 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/ProfileText"
+        <ImageView
+            android:id="@+id/imageView3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="150dp"
-            android:layout_marginTop="5dp"
-            android:padding="8dp"
-            android:text="Profile"
-            android:textAlignment="center"
-            android:textSize="25dp" />
+            android:layout_height="400dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/prof" />
 
     </LinearLayout>
 
 
     <LinearLayout
-        android:id="@+id/layoutShorts"
+        android:id="@+id/layoutUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -44,14 +41,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:text="UserName"
+            android:text="Username"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layoutLive"
+        android:id="@+id/layoutlogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -61,14 +58,14 @@
         android:paddingBottom="30dp">
 
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:text="Log Out"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="373dp"
+            android:layout_height="66dp"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/logout" />
 
     </LinearLayout>
 

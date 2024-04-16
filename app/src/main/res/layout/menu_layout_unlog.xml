@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dialogbkg"
@@ -36,13 +38,16 @@
         android:padding="10dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/home" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="5dp"
             android:text="Home"
             android:textColor="@color/white"
             android:textSize="16sp" />
@@ -58,13 +63,16 @@
 
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|top"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/zone" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="5dp"
             android:text="Zones"
             android:textColor="@color/white"
             android:textSize="16sp" />
