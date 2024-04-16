@@ -1,16 +1,72 @@
 <resources>
     <string name="app_name">TrackYourScrolls</string>
 
-    <string-array name="test">
-        <item>test1</item>
-        <item>test2</item>
-        <item>test3</item>
-        <item>test4</item>
-        <item>test5</item>
-        <item>test6</item>
-        <item>test7</item>
-        <item>test8</item>
-        <item>test9</item>
-        <item>test10</item>
+    <string-array name="zone_name">
+        <item>Star End</item>
+        <item>Thornwood</item>
+        <item>Thornwood</item>
+        <item>Star End</item>
+        <item>Aakman</item>
+        <item>Star End</item>
+        <item>Thornwood</item>
+        <item>Aakman</item>
+        <item>Aakman</item>
+        <item>Star End</item>
+    </string-array>
+
+    <string-array name="zone_drop">
+        <item>Silver Loot: 150 000 000
+            Item drop: 750 000 000
+            Rare drop: 4
+        </item>
+        <item>Silver Loot: 150 000 000
+            Item drop: 750 000 000
+            Rare drop: 4
+        </item>
+        <item>Silver Loot: 150 000 000
+            Item drop: 750 000 000
+            Rare drop: 4
+        </item>
+        <item>Silver Loot: 150 000 000
+            Item drop: 750 000 000
+            Rare drop: 4
+        </item>
+        <item>Silver Loot: 150 000 000
+            Item drop: 750 000 000
+            Rare drop: 4
+        </item>
+        <item>Silver Loot: 150 000 000
+            Item drop: 750 000 000
+            Rare drop: 4
+        </item>
+        <item>Silver Loot: 150 000 000
+            Item drop: 750 000 000
+            Rare drop: 4
+        </item>
+        <item>Silver Loot: 150 000 000
+            Item drop: 750 000 000
+            Rare drop: 4
+        </item>
+        <item>Silver Loot: 150 000 000
+            Item drop: 750 000 000
+            Rare drop: 4
+        </item>
+        <item>Silver Loot: 150 000 000
+            Item drop: 750 000 000
+            Rare drop: 4
+        </item>
+    </string-array>
+
+    <string-array name="zone_img">
+        <item>se</item>
+        <item>tw</item>
+        <item>tw</item>
+        <item>se</item>
+        <item>am</item>
+        <item>se</item>
+        <item>tw</item>
+        <item>am</item>
+        <item>am</item>
+        <item>se</item>
     </string-array>
 </resources>

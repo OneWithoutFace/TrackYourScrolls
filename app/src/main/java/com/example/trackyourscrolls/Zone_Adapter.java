@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,7 +32,9 @@ public class Zone_Adapter extends RecyclerView.Adapter<Zone_Adapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull Zone_Adapter.MyViewHolder holder, int position) {
-        holder.blockText.setText(zoneModels.get(position).getBlockText());
+        holder.zoneName.setText(zoneModels.get(position).getZoneName());
+        holder.zoneText.setText(zoneModels.get(position).getZoneText());
+        holder.zoneImg.setImageResource(zoneModels.get(position).getZoneImg());
 
     }
 
@@ -41,12 +44,17 @@ public class Zone_Adapter extends RecyclerView.Adapter<Zone_Adapter.MyViewHolder
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView blockText;
+        TextView zoneName;
+        TextView zoneText;
+        ImageView zoneImg;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            blockText = itemView.findViewById(R.id.tvModelBlock);
+            zoneName = itemView.findViewById(R.id.cardtitle);
+            zoneText = itemView.findViewById(R.id.carddesc);
+            zoneImg = itemView.findViewById(R.id.cardimg);
+
         }
     }
 }

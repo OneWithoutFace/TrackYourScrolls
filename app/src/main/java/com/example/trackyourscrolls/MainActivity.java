@@ -105,10 +105,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupZoneModel(){
-        String[] zoneNames = getResources().getStringArray(R.array.test);
+        String[] zoneNames = getResources().getStringArray(R.array.zone_name);
+        String[] zoneText = getResources().getStringArray(R.array.zone_drop);
+        String[] zoneImg = getResources().getStringArray(R.array.zone_img);
 
         for (int i = 0; i<zoneNames.length; i++){
-            zoneModels.add(new ZoneModel(zoneNames[i]));
+            zoneModels.add(new ZoneModel(zoneNames[i],zoneText[i],zoneImg[i]));
         }
     }
 
