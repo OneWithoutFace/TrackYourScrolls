@@ -15,21 +15,23 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class ActivityZone extends AppCompatActivity {
     boolean logIn = true;
-    ArrayList<ZoneModel>zoneModels = new ArrayList<>();
+    ArrayList<ZoneModel> zoneModels = new ArrayList<>();
     ImageButton menuSheet,profileSheet;
 
     String loggedUser = "Test";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_zone);
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_zone);
         setupZoneModel();
         RecyclerView recyclerView = findViewById(R.id.RVZone);
         Zone_Adapter adapter = new Zone_Adapter(this, zoneModels);
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (logIn == true){
                     showDialogProfileIn();
-                    
+
 
                 }
                 else {
@@ -65,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 
     private void addNewZone(){
@@ -125,13 +125,12 @@ public class MainActivity extends AppCompatActivity {
         layoutHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent=new Intent(MainActivity.this,ActivityZone.class);
                 dialog.hide();
+                Intent intent=new Intent(ActivityZone.this,MainActivity.class);
                 startActivity(intent);
             }
         });
-        
+
         layoutZone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -156,6 +155,4 @@ public class MainActivity extends AppCompatActivity {
             zoneModels.add(new ZoneModel(zoneNames[i],zoneText[i],zoneImg[i]));
         }
     }
-
-
 }

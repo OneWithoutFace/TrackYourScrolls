@@ -42,13 +42,13 @@
             android:layout_height="match_parent"
             android:layout_gravity="top"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/home" />
+            app:srcCompat="@drawable/zone" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Home"
+            android:text="Zones"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
