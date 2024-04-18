@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (logIn == true){
-                    showDialogmenuUnlog();
+                    showDialogmenulog();
                 }
                 else {
                     showDialogmenuUnlog();
@@ -150,6 +150,30 @@ public class MainActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.menu_layout_mainunlog);
 
         LinearLayout layoutHome = dialog.findViewById(R.id.layoutHomeUL);
+
+        layoutHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(MainActivity.this,ActivityZone.class);
+                dialog.hide();
+                startActivity(intent);
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.TOP);
+    }
+
+    private void showDialogmenulog(){
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.menu_layout_mainunlogg);
+
+        LinearLayout layoutHome = dialog.findViewById(R.id.layoutHomeUL);
         LinearLayout layoutZone = dialog.findViewById(R.id.layoutZoneUL);
 
         layoutHome.setOnClickListener(new View.OnClickListener() {
@@ -161,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        
+
         layoutZone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

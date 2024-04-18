@@ -54,5 +54,30 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/layoutZoneUL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|top"
+            android:scaleType="fitCenter"
+            app:srcCompat="@android:drawable/ic_menu_add" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Add scroll"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
 
 </LinearLayout>
