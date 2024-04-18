@@ -22,14 +22,46 @@
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
-            android:layout_height="400dp"
+            android:layout_height="200dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/prof" />
+            app:srcCompat="@drawable/logomain" />
 
     </LinearLayout>
 
 
     <LinearLayout
+        android:id="@+id/layoutZoneName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="@color/darkgrey"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/grey"
+            android:padding="5dp"
+            android:text="Zone :"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/zonelist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:spinnerMode="dropdown"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutItemDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/darkgrey"
@@ -41,25 +73,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:layout_marginEnd="15dp"
+            android:layout_marginEnd="20dp"
             android:background="@color/grey"
             android:padding="5dp"
-            android:text="Username:"
+            android:text="Item Dropped :"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/textLoggedName"
-            android:layout_width="50dp"
+        <EditText
+            android:id="@+id/additemdrop"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/grey"
-            android:padding="5dp"
-            android:text="Temp"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+            android:background="@color/white"
+            android:ems="10"
+            android:inputType="text" />
 
     </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/layoutlogout"
@@ -79,7 +110,7 @@
             android:layout_weight="1"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/logout" />
+            app:srcCompat="@drawable/addbtn" />
 
     </LinearLayout>
 

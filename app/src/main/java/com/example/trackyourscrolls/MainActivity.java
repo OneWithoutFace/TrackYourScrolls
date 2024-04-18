@@ -12,17 +12,19 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    boolean logIn = false;
+    boolean logIn = true;
     ArrayList<ZoneModel>zoneModels = new ArrayList<>();
     ImageButton menuSheet,profileSheet;
+
+    String loggedUser = "Test";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (logIn == true){
-
+                    showDialogmenuUnlog();
                 }
                 else {
                     showDialogmenuUnlog();
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (logIn == true){
+                    showDialogProfileIn();
+                    
 
                 }
                 else {
@@ -63,6 +67,40 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    private void addNewZone(){
+
+    }
+
+    private void showAddScroll(){
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.activity_addcontentzone);
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.TOP);
+
+
+    }
+
+    private void showDialogProfileIn(){
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.profile_layout_in);
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.TOP);
+
+
+
+
+    }
+
     private void showDialogProfileOut(){
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -93,7 +131,8 @@ public class MainActivity extends AppCompatActivity {
         layoutZone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Zone", Toast.LENGTH_SHORT).show();
+                showAddScroll();
+                dialog.hide();
             }
         });
 
