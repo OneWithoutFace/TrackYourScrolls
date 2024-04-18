@@ -13,18 +13,21 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     boolean logIn = false;
     ArrayList<ZoneModel>zoneModels = new ArrayList<>();
     ImageButton menuSheet,profileSheet;
 
+    User testuser = new User("test","test123");
     String loggedUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        User testuser = new User("test","test123");
 
     }
 
@@ -120,10 +122,12 @@ public class MainActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.profile_layout_out);
 
         ImageButton btnLogIn = dialog.findViewById(R.id.btnLogIn);
+        final EditText userIn = (EditText) dialog.findViewById(R.id.usernamefield);
+        final EditText userPass = (EditText) dialog.findViewById(R.id.passwordfield);
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkLogin()){
+                if (checkLogin(userIn.getText().toString(),userPass.getText().toString())){
                     Toast.makeText(MainActivity.this, "Log in Sucess", Toast.LENGTH_SHORT).show();
                     logIn = true;
                     dialog.hide();
@@ -183,8 +187,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private boolean checkLogin(){
-        return true;
+    private boolean checkLogin(String userIn,String userPass){
+        if (Objects.equals(userIn, testuser.getUserName())){
+            if (testuser.checkPassword(userPass)){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
+
+
     }
 
 }
