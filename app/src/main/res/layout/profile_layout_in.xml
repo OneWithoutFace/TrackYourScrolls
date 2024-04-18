@@ -73,7 +73,7 @@
 
 
         <ImageButton
-            android:id="@+id/addscroll"
+            android:id="@+id/btnLogout"
             android:layout_width="373dp"
             android:layout_height="66dp"
             android:layout_weight="1"

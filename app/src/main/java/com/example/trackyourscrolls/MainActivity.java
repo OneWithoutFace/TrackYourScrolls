@@ -21,11 +21,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    boolean logIn = true;
+    boolean logIn = false;
     ArrayList<ZoneModel>zoneModels = new ArrayList<>();
     ImageButton menuSheet,profileSheet;
 
-    String loggedUser = "Test";
+    String loggedUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        User testuser = new User("test","test123");
 
     }
 
@@ -91,6 +92,17 @@ public class MainActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.profile_layout_in);
 
+        ImageButton btnLogOut = dialog.findViewById(R.id.btnLogout);
+
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logIn = false;
+                Toast.makeText(MainActivity.this, "Logged Out", Toast.LENGTH_SHORT).show();
+                dialog.hide();
+            }
+        });
+
         dialog.show();
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -107,6 +119,20 @@ public class MainActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.profile_layout_out);
 
+        ImageButton btnLogIn = dialog.findViewById(R.id.btnLogIn);
+        btnLogIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkLogin()){
+                    Toast.makeText(MainActivity.this, "Log in Sucess", Toast.LENGTH_SHORT).show();
+                    logIn = true;
+                    dialog.hide();
+                }else {
+                    Toast.makeText(MainActivity.this, "Check Username or Password", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         dialog.show();
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -117,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
     private void showDialogmenuUnlog(){
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.menu_layout_unlog);
+        dialog.setContentView(R.layout.menu_layout_mainunlog);
 
         LinearLayout layoutHome = dialog.findViewById(R.id.layoutHomeUL);
         LinearLayout layoutZone = dialog.findViewById(R.id.layoutZoneUL);
@@ -157,5 +183,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private boolean checkLogin(){
+        return true;
+    }
 
 }

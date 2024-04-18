@@ -20,16 +20,13 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class ActivityZone extends AppCompatActivity {
-    boolean logIn = true;
+    boolean logIn = false;
     ArrayList<ZoneModel> zoneModels = new ArrayList<>();
     ImageButton menuSheet,profileSheet;
 
-    String loggedUser = "Test";
+    String loggedUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zone);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zone);
         setupZoneModel();
@@ -43,10 +40,9 @@ public class ActivityZone extends AppCompatActivity {
         menuSheet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (logIn == true){
+                if (logIn == true) {
                     showDialogmenuUnlog();
-                }
-                else {
+                } else {
                     showDialogmenuUnlog();
                 }
 
@@ -56,12 +52,11 @@ public class ActivityZone extends AppCompatActivity {
         profileSheet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (logIn == true){
+                if (logIn == true) {
                     showDialogProfileIn();
 
 
-                }
-                else {
+                } else {
                     showDialogProfileOut();
                 }
 
